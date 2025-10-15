@@ -36,6 +36,6 @@ const WelcomeContainer = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   font-family: --quickSand;
 `;
