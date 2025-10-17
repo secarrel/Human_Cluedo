@@ -15,12 +15,14 @@ export default function Welcome({ skipIntro }: ComponentProps) {
 
   return (
     <WelcomeContainer onClick={() => skipIntro(timer)}>
-      <Title>Human Cluedo</Title>
+      <h1>Human Cluedo</h1>
       <span>You can skip after 2.3 seconds</span>
       <span>
         I'll add some cool animation here to make the wait less boring!
       </span>
-      <Title>{timer}</Title>
+      <span>
+        <strong>{timer}</strong>
+      </span>
     </WelcomeContainer>
   );
 }
@@ -34,8 +36,4 @@ const WelcomeContainer = styled.div`
   align-items: center;
   padding-bottom: 5rem;
   text-align: center;
-`;
-
-export const Title = styled.h1`
-  font-family: --quickSand;
 `;

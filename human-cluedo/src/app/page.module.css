@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100svh;
-  font-family: var(--font-geist-sans);
+  font-family: var(--quickSand);
   color: white;
 }
 
@@ -31,10 +31,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 100svw;
+  min-height: 100svh !important;
 }
 
 .main ol {
-  font-family: var(--font-geist-mono);
+  font-family: var(--quickSand);
   padding-left: 0;
   margin: 0;
   font-size: 14px;
