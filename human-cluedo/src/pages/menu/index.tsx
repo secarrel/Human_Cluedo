@@ -1,17 +1,45 @@
+import { NavigationLink, Pages } from "@/app/page";
 import styled from "styled-components";
-import { Title } from "../welcome";
 
-export default function Menu() {
+interface ComponentProps {
+  selectOption: (selection: Pages) => void;
+}
+
+export default function Menu({ selectOption }: ComponentProps) {
   return (
     <>
-      <Title>Human Cluedo</Title>
-      <h2>Main menu</h2>
-      <ul>
-        <li>New game</li>
-        <li>Continue previous game</li>
-        <li>How to play</li>
-        <li>Using this app</li>
-      </ul>
+      <MenuTitle>Human Cluedo</MenuTitle>
+      <MenuContainer>
+        <ListItem onClick={() => selectOption(Pages.NewGame)}>
+          <NavigationLink>New game</NavigationLink>
+        </ListItem>
+        <ListItem onClick={() => selectOption(Pages.LoadGame)}>
+          <NavigationLink>Continue previous game</NavigationLink>
+        </ListItem>
+        <ListItem onClick={() => selectOption(Pages.Rules)}>
+          <NavigationLink>How to play</NavigationLink>
+        </ListItem>
+      </MenuContainer>
     </>
   );
 }
+
+const MenuTitle = styled.h1`
+  font-size: 2.8rem;
+`;
+
+const MenuContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top: 3rem;
+  width: 100%;
+`;
+
+const ListItem = styled.li`
+  text-align: center;
+  width: 100%;
+  height: 2rem;
+`;
